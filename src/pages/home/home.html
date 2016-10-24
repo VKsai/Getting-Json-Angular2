@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h1>{{title}}</h1>
+  <h2>Job Data</h2>
+  <ul class="jobs">
+    <li *ngFor="let job of jobs"
+        <!--[class.selected]="hero === selectedHero"
+        (click)="onSelect(hero)">-->
+      <span class="badge">{{job.id}}</span> {{hero.scJobId}}
+    </li>
+  </ul>
+</ion-content>
