@@ -1,7 +1,10 @@
 import { NgModule } from '@angular/core';
 import { IonicApp, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
+import {HomePage} from "../pages/home-page/home-page";
+import {HomePageService} from "../providers/home-page";
+
+
 
 @NgModule({
   declarations: [
@@ -16,6 +19,6 @@ import { HomePage } from '../pages/home/home';
     MyApp,
     HomePage
   ],
-  providers: []
+  providers: [HomePageService]
 })
 export class AppModule {}
