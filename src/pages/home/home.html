@@ -1,19 +1,34 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
-</ion-header>
+    <ion-navbar>
+      <!--<button ion-button icon-only menuToggle="right">
+        <ion-icon md="md-funnel" (click)="alert_now()"></ion-icon>
+      </button>-->
 
-<ion-content padding>
-  <h1>{{title}}</h1>
-  <h2>Job Data</h2>
-  <ul class="jobs">
-    <li *ngFor="let job of jobs"
-        <!--[class.selected]="hero === selectedHero"
-        (click)="onSelect(hero)">-->
-      <span class="badge">{{job.id}}</span> {{hero.scJobId}}
-    </li>
-  </ul>
-</ion-content>
+      <ion-buttons end>
+        <button ion-button icon-only (click)="doPrompt()">
+          <ion-icon name="funnel"></ion-icon>
+        </button>
+      </ion-buttons>
+      <ion-title align="center">Home</ion-title>
+    </ion-navbar>
+  </ion-header>
+
+  <ion-content padding>
+
+    <!--<ion-searchbar [(ngModel)]="searchTerm" [formControl]="searchControl" (ionInput)="onSearchInput()"></ion-searchbar>-->
+    <!--<div *ngIf="searching" class="spinner-container">
+      <ion-spinner></ion-spinner>
+    </div>-->
+    <ion-list>
+      <ion-item detail-push>
+        <button ion-item *ngFor="let job of jobsArray" (click)="homeAction(job.id)">
+          <b>{{job.title}}, {{job.empName}}</b> <br/> <b>Posted:</b> {{job.createdDate}}
+        </button>
+      </ion-item>
+
+    <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+      <ion-infinite-scroll-content loadingSpinner="bubbles"
+                                 loadingText="Loading more information..."></ion-infinite-scroll-content>
+      </ion-infinite-scroll>
+    </ion-list>
+  </ion-content>

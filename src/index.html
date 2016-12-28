@@ -10,7 +10,7 @@
   <link rel="icon" type="image/x-icon" href="assets/icon/favicon.ico">
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#4e8ef7">
-  
+
   <!-- cordova.js required for cordova apps -->
   <script src="cordova.js"></script>
 
@@ -30,6 +30,21 @@
 
   <!-- Ionic's root component and where the app will load -->
   <ion-app></ion-app>
+
+  <!-- Firebase Connectivity -->
+  <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/3.5.3/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyBki33jHmL1HCYOkiDNCmu7lWmat2ZPdYM",
+      authDomain: "dsmp-20feb.firebaseapp.com",
+      databaseURL: "https://dsmp-20feb.firebaseio.com",
+      storageBucket: "dsmp-20feb.appspot.com",
+      messagingSenderId: "795065559957"
+    };
+    firebase.initializeApp(config);
+  </script>
 
   <!-- The polyfills js is generated during the build process -->
   <script src="build/polyfills.js"></script>

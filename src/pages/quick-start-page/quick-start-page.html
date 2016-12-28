@@ -1,0 +1,47 @@
+<!--
+  Generated template for the QuickStartPage page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>QuickStartPage</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+<ion-card>
+  <ion-card-header>
+    <h1>Easy Job Seeker Qualifications Entry Guide</h1>
+    <h2>Find more job matches by entering more of your qualifications into your Employability Profile.</h2>
+  </ion-card-header>
+  <ion-card-content >
+    <h2>Employability Profile Summary</h2>
+    <h3>Your Employability Profile currently contains the following qualifications and work experiences:</h3>
+    <ion-list >
+      <ion-item>
+        <h3>Caree Expertise</h3>
+        <div class="forQS" *ngFor="let qs of careers">
+        <ul>
+          <li><b>{{qs.onetTitle}}</b> <br/> <div *ngIf="qs.expertiseLevelLmh == M">Expertise Level: Medium </div><div *ngIf="qs.expertiseLevelLmh == H">Expertise Level: High </div>
+            <div *ngIf="qs.expertiseLevelLmh == L">Expertise Level: Low </div></li> <button ion-button outline item-right icon-left>Edit</button>
+        </ul>
+          </div>
+      </ion-item>
+      <ion-item>
+        <h3>Work Experience</h3>
+        <div class="forQS" *ngFor="let ex of experience">
+          <ul>
+            <li><b>{{ex.jobTitle}}</b> <br/> {{ex.employerName}} <br/> {{ex.startDate}} <div *ngIf="ex.endDate == true">{{ex.endDate}}</div></li> <button ion-button outline item-right icon-left>Edit</button>
+          </ul>
+        </div>
+      </ion-item>
+    </ion-list>
+  </ion-card-content>
+</ion-card>
+</ion-content>
+
